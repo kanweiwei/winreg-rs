@@ -1,6 +1,6 @@
 {
   "name": "@camol/winreg-rs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Template project for writing node package with napi-rs",
   "main": "index.js",
   "repository": "git@github.com:kanweiwei/winreg-rs.git",
@@ -20,10 +20,10 @@
   "napi": {
     "name": "winreg-rs",
     "triples": {
-      "defaults": true,
+      "defaults": false,
       "additional": [
         "i686-pc-windows-msvc",
-        "x86_64-pc-window.msvc",
+        "x86_64-pc-windows.msvc",
         "aarch64-pc-windows-msvc"
       ]
     }
