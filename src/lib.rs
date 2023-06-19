@@ -26,7 +26,7 @@ impl JsRegistry {
   #[napi(constructor)]
   pub fn new(hive: String) -> Self {
     let predef: RegKey;
-    if hive == HKCU.to_string() {
+    if hive == "HKCU" {
       predef = RegKey::predef(HKEY_CURRENT_USER);
     } else if hive == "HKLM" {
       predef = RegKey::predef(HKEY_LOCAL_MACHINE);
