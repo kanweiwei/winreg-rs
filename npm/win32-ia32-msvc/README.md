@@ -1,3 +1,3 @@
-# `winreg-rs-win32-ia32-msvc`
+# `@camol/winreg-rs-win32-ia32-msvc`
 
-This is the **i686-pc-windows-msvc** binary for `winreg-rs`
+This is the **i686-pc-windows-msvc** binary for `@camol/winreg-rs`

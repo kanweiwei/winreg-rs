@@ -1,7 +1,7 @@
 name: CI
 env:
   DEBUG: napi:*
-  APP_NAME: winreg-rs
+  APP_NAME: '@camol/winreg-rs'
   MACOSX_DEPLOYMENT_TARGET: '10.13'
 'on':
   push:
@@ -102,7 +102,6 @@ jobs:
           name: bindings-${{ matrix.settings.target }}
           path: ${{ env.APP_NAME }}.*.node
           if-no-files-found: error
- 
   test-macOS-windows-binding:
     name: Test bindings on ${{ matrix.settings.target }} - node@${{ matrix.node }}
     needs:

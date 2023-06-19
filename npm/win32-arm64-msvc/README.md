@@ -1,3 +1,3 @@
-# `winreg-rs-win32-arm64-msvc`
+# `@camol/winreg-rs-win32-arm64-msvc`
 
-This is the **aarch64-pc-windows-msvc** binary for `winreg-rs`
+This is the **aarch64-pc-windows-msvc** binary for `@camol/winreg-rs`
