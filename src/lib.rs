@@ -1,15 +1,15 @@
 #![deny(clippy::all)]
-use winreg::enums::{HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE, HKEY_CLASSES_ROOT};
-use winreg::RegKey;
 use napi_derive::napi;
+use winreg::enums::{HKEY_CLASSES_ROOT, HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE};
+use winreg::RegKey;
 
 pub struct Registry {
-  pub predef: RegKey
+  pub predef: RegKey,
 }
 
 #[napi]
 pub struct JsRegistry {
-  registry: Registry
+  registry: Registry,
 }
 
 #[napi]
@@ -55,14 +55,14 @@ impl JsRegistry {
   #[napi]
   pub fn get_values(&self, key: String) -> Option<Vec<String>> {
     if let Ok(sub_key) = self.registry.predef.open_subkey(key) {
-      let names: Vec<String> = sub_key.enum_values().map(|x| match x {
-        Ok((x, _)) => {
-            x.to_string()
-        },
-        Err(_err) => "".to_string(),
-      })
-      .filter(|s| !s.trim().is_empty())
-      .collect();
+      let names: Vec<String> = sub_key
+        .enum_values()
+        .map(|x| match x {
+          Ok((x, _)) => x.to_string(),
+          Err(_err) => "".to_string(),
+        })
+        .filter(|s| !s.trim().is_empty())
+        .collect();
       Some(names)
     } else {
       None
@@ -72,14 +72,14 @@ impl JsRegistry {
   #[napi]
   pub fn get_keys(&self, key: String) -> Option<Vec<String>> {
     if let Ok(sub_key) = self.registry.predef.open_subkey(key) {
-      let names: Vec<String> = sub_key.enum_keys().map(|x| match x {
-        Ok(x) => {
-            x.to_string()
-        },
-        Err(_err) => "".to_string(),
-      })
-      .filter(|s| !s.trim().is_empty())
-      .collect();
+      let names: Vec<String> = sub_key
+        .enum_keys()
+        .map(|x| match x {
+          Ok(x) => x.to_string(),
+          Err(_err) => "".to_string(),
+        })
+        .filter(|s| !s.trim().is_empty())
+        .collect();
       Some(names)
     } else {
       None
