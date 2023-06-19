@@ -1,6 +1,6 @@
 {
-  "name": "winreg-rs-win32-arm64-msvc",
-  "version": "1.0.0",
+  "name": "@camol/winreg-rs-win32-arm64-msvc",
+  "version": "0.1.1",
   "os": [
     "win32"
   ],
@@ -28,5 +28,5 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "repository": "git@github.com:napi-rs/package-template.git"
+  "repository": "git@github.com:kanweiwei/winreg-rs.git"
 }
