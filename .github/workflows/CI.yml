@@ -1,7 +1,7 @@
 name: CI
 env:
   DEBUG: napi:*
-  APP_NAME: '@camol/winreg-rs'
+  APP_NAME: winreg-rs
   MACOSX_DEPLOYMENT_TARGET: '10.13'
 'on':
   push:
