@@ -13,15 +13,6 @@ pub struct JsRegistry {
 }
 
 #[napi]
-pub const HKLM: &str = "HKLM";
-
-#[napi]
-pub const HKCU: &str = "HKCU";
-
-#[napi]
-pub const HKCR: &str = "HKCR";
-
-#[napi]
 impl JsRegistry {
   #[napi(constructor)]
   pub fn new(hive: String) -> Self {
