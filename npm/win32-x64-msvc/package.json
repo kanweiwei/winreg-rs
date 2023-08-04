@@ -4,9 +4,6 @@
   "os": [
     "win32"
   ],
-  "cpu": [
-    "x64"
-  ],
   "main": "winreg-rs.win32-x64-msvc.node",
   "files": [
     "winreg-rs.win32-x64-msvc.node"
