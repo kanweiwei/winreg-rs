@@ -6,6 +6,7 @@
 export class JsRegistry {
   constructor(hive: string)
   getKeyValue(key: string, name: string): string | null
+  setKeyValue(key: string, name: string, value: string): boolean
   getValues(key: string): Array<string> | null
   getKeys(key: string): Array<string> | null
 }
