@@ -44,6 +44,18 @@ impl JsRegistry {
   }
 
   #[napi]
+  pub fn set_key_value(&self, key: String, name: String, value: String) -> bool {
+    if let Ok(sub_key) = self.registry.predef.open_subkey(key) {
+      match sub_key.set_value(name, &value) {
+        Ok(_) => true,
+        Err(_) => false,
+      }
+    } else {
+      false
+    }
+  }
+
+  #[napi]
   pub fn get_values(&self, key: String) -> Option<Vec<String>> {
     if let Ok(sub_key) = self.registry.predef.open_subkey(key) {
       let names: Vec<String> = sub_key
